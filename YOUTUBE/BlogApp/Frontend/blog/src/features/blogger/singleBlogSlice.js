@@ -22,7 +22,7 @@ const initialState = {
 export const fetchPostById = createAsyncThunk(
     "post/fetchPostById",
     async (postId) => {
-      const response = await axios.get(`${POST_URLS}${postId}`);
+      const response = await axios.get(`${POST_URLS}${postId}/`);
       return response.data;
     }
   );

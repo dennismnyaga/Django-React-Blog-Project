@@ -14,8 +14,8 @@ const BlogExcerpt = ({post, posterId, postId}) => {
   console.log(owner.username)
   return (
     <div className='w-80 shadow-lg '>
-        <div>
-            <img className='object-contain rounded-lg' width='100%' height='350px' src={post.image} alt={post.title} loading='lazy' />
+        <div className='' height='360px'>
+            <img className='object-fill h-48 w-96 rounded-lg' width='100%' height='100%' src={post.image} alt={post.title} loading='lazy' />
         </div>
         <div className=' mb-3'>
             <div className='flex justify-between items-center bg-purple px-3 mt-3 text-white'>

@@ -33,6 +33,12 @@ def home(request):
     return Response(serialize.data)
 
 @api_view()
+def postdetail(request, pk):
+    posts = Post.objects.get(pk=pk)
+    serialize = PostSerializer(posts)
+    return Response(serialize.data)
+
+@api_view()
 def category(request):
     categories = Category.objects.all()
     serialize = CategorySerializer(categories, many = True)

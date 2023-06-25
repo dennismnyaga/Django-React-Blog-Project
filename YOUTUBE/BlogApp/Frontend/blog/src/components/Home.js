@@ -4,10 +4,7 @@ import { fetchPosts, getPostsError, getPostsStatus, selectAllPosts, selectCatego
 import BlogExcerpt from '../features/blogger/BlogExcerpt';
 import SidePanel from './SidePanel';
 import { fetchCategories, selectAllCategories } from '../features/category/categorySlice';
-import PropTypes from 'prop-types';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+
 import Skeleton from '@mui/material/Skeleton';
 
 const Home = () => {
@@ -38,8 +35,19 @@ const Home = () => {
     
     let content;
     if (postsStatus === "loading") {
-        content = <div className="center">
-            <Skeleton variant="rectangular" animation="wave" width={210} height={118} />
+        content = <div className="flex content-between gap-3 mb-5">
+            <div>
+            <Skeleton className='h-48 w-96' variant="rectangular" animation="wave"  />
+            <Skeleton className='w-96'  />
+            <Skeleton className='w-96' />
+            </div>
+            <div>
+            <Skeleton className='h-48 w-96' variant="rectangular" animation="wave"  />
+            <Skeleton className='w-96'  />
+            <Skeleton className='w-96' />
+            </div>
+            
+            
         </div>
     } else if (postsStatus === "succeeded") {
         content = filteredPosts.map((post) => (

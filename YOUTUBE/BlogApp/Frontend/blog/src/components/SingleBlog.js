@@ -4,6 +4,8 @@ import { fetchPostById, getPostError, getPostStatus, selectPost } from '../featu
 import SingleBlogExcerpt from '../features/blogger/SingleBlogExcerpt';
 import { useParams } from 'react-router-dom';
 import SidePanel from './SidePanel';
+import Skeleton from '@mui/material/Skeleton';
+
 
 const SingleBlog = () => {
   const post = useSelector(selectPost);
@@ -24,7 +26,12 @@ const SingleBlog = () => {
   
   let content;
     if (postStatus === "loading") {
-        content = <div className="center">Loading...</div>
+        content = <div className="mt-2 mb-3">
+          <Skeleton className=''  />
+          <Skeleton className='' height='450px' variant="rectangular" animation="wave"  />
+            <Skeleton className=''  />
+            <Skeleton className='' />
+        </div>
     } else if (postStatus === "succeeded") {
         content = <SingleBlogExcerpt key={post.id} postId={post.id} post={post} posterId={post.owner} />
        

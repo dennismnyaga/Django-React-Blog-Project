@@ -20,7 +20,7 @@ const SingleBlogExcerpt = ({ post }) => {
         <p className="flex gap-1 items-center"><AccessTimeIcon className="text-sm" /> {formattedDate}</p>
       </div>
       <div className="">
-        <img className="px-2 mt-3 rounded-lg  object-cover" src={post.image} alt={post.title} />
+        <img className="px-2 mt-3 rounded-lg  object-cover h-96 " width='100%' src={post.image} alt={post.title} />
       </div>
       <div className="mt-3 text-center">
         <h1 className="font-extrabold text-2xl underline cursor-pointer">{post.title}</h1>
